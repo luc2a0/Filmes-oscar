@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roleta Oscar 2026 — Melhor Filme</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background">
+    <div class="noise"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+    <div class="gold-ring gold-ring-1"></div>
+    <div class="gold-ring gold-ring-2"></div>
+  </div>
+
+  <main class="page">
+    <section class="hero">
+      <p class="hero-kicker">Oscar 2026 — Melhor Filme</p>
+      <h1>Roleta dos Indicados</h1>
+      <p class="hero-subtitle">
+        Escolha quais filmes entram no sorteio, gire a roleta e registre suas impressões
+        como um crítico elegante, um cinéfilo caótico ou uma mistura perigosíssima dos dois.
+      </p>
+    </section>
+
+    <section class="card selector-card">
+      <div class="section-header center">
+        <h2>Escolha os filmes da roleta</h2>
+        <p>
+          Você pode deixar todos os 10, ou só os que ainda quer assistir.
+          O caos aqui é seletivo e personalizado.
+        </p>
+      </div>
+
+      <div id="movieSelector" class="movie-selector"></div>
+
+      <div class="selector-actions">
+        <button id="selectAllBtn" class="secondary-btn" type="button">Marcar todos</button>
+        <button id="clearAllBtn" class="secondary-btn" type="button">Desmarcar todos</button>
+        <span id="selectedCount" class="selected-count">0 selecionados</span>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      <div class="card wheel-card">
+        <div class="section-header center">
+          <h2>Gire a roleta</h2>
+          <p>
+            O próximo filme será escolhido pelo destino, pela sorte
+            e por aquele tipo de suspense que nem streaming dá conta.
+          </p>
+        </div>
+
+        <div class="wheel-wrap">
+          <div class="pointer"></div>
+          <canvas id="wheel" width="620" height="620" aria-label="Roleta dos filmes"></canvas>
+          <div class="wheel-center-glow"></div>
+        </div>
+
+        <div class="wheel-actions">
+          <button id="spinBtn" class="primary-btn" type="button">Girar roleta</button>
+        </div>
+      </div>
+
+      <aside class="card result-card">
+        <div class="section-header">
+          <h2>Filme sorteado</h2>
+          <p>Seu próximo encontro com a sétima arte.</p>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          Nenhum filme sorteado ainda.<br />
+          Gire a roleta e descubra quem vai dominar a sua próxima sessão.
+        </div>
+
+        <div id="resultContent" class="result-content hidden">
+          <span class="result-badge">Escolhido pela roleta</span>
+          <h3 id="movieTitle">—</h3>
+
+          <div class="info-block rating-block">
+            <h4>Nota</h4>
+            <p id="movieRating">—</p>
+          </div>
+
+          <div class="info-block synopsis-block">
+            <h4>Sinopse</h4>
+            <p id="movieSynopsis">—</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card notes-card">
+      <div class="section-header center">
+        <h2>Escreva sobre o filme</h2>
+        <p>
+          Use este espaço para anotações, análise, leitura simbólica, comentários técnicos,
+          frases soltas, surtos, epifanias e pequenos julgamentos severos.
+        </p>
+      </div>
+
+      <label for="notes" class="sr-only">Anotações sobre o filme</label>
+      <textarea
+        id="notes"
+        placeholder="Escreva aqui sua análise do filme, impressões, cenas marcantes, interpretações, comentários sobre direção, fotografia, trilha, atuação e tudo mais que sua alma cinéfila exigir..."
+      ></textarea>
+
+      <div class="notes-actions">
+        <button id="copyBtn" class="primary-btn" type="button">Copiar texto</button>
+        <span id="copyFeedback" class="copy-feedback"></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
